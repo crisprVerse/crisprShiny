@@ -1,0 +1,11 @@
+1. Answer those 2 questions for the vignette:
+	a. Should the main function run the app itself, i.e., crisprShiny?
+	b. Indicate that using the criprShiny modules is for developer use.
+
+2. R code
+
+Comment from reviewer: Ideally the tooltip annotation data should be treated as data and not text
+in a switch call (interface_tooltips.R).
+
+3. Remove crisprDesignData dependency. It seems the package is needed for the unit tests (using the  txdb_human object). To do: create a small txdb object that contains only the genes needed for testing, and add this object to the crisprShiny package
+
