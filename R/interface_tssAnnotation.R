@@ -9,6 +9,5 @@
             shiny::br(),
             DT::dataTableOutput(ns("tssAnnotationDataTable"))
         )
-        ## TODO: add plot
     })
 }

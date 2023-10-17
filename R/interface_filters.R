@@ -4,15 +4,6 @@
 ){
     ns <- session$ns
     
-    .filterTemplate <- function(title,
-                                ui
-    ){
-        shiny::wellPanel(
-            class="filter-well",
-            shiny::h4(title, class="filter-well-title"),
-            ui
-        )
-    }
     
     shiny::modalDialog(
         title=shiny::h3("Filter on-targets"),

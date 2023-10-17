@@ -8,7 +8,6 @@
         shiny::tagList(
             shiny::br(),
             DT::dataTableOutput(ns("geneAnnotationDataTable"))
-            ## TODO: add plot
         )
     })
 }

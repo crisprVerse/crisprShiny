@@ -1,14 +1,19 @@
 Package: crisprShiny
 Title: Exploring curated CRISPR gRNAs via Shiny
-Version: 0.99.0
+Version: 0.99.1
 Authors@R: c(
     person("Jean-Philippe", "Fortin", email = "fortin946@gmail.com", role = c("aut", "cre")),
     person("Luke", "Hoberecht", email = "lukehob3@gmail.com", role = c("aut"))
     )
-Description: Provides means to interactively visualize guide RNAs (gRNAs) in GuideSet objects via Shiny application. This GUI can be self-contained or as a module within a larger Shiny app. The content reflects the annotations present in the passed GuideSet object, and includes intuitive tools to examine, filter, and export gRNAs, thereby making gRNA design more user-friendly.
-    Bioconductor package crisprDesign via Shiny.
+Description: Provides means to interactively visualize guide RNAs (gRNAs) 
+in GuideSet objects via Shiny application. This GUI can be self-contained
+ or as a module within a larger Shiny app. The content reflects the annotations 
+ present in the passed GuideSet object, and includes intuitive tools to 
+ examine, filter, and export gRNAs, thereby making gRNA 
+ design more user-friendly. 
 Depends:
-    R (>= 4.2.0)
+    R (>= 4.3.0),
+    shiny
 Imports:
     BiocGenerics,
     Biostrings,
@@ -22,7 +27,6 @@ Imports:
     htmlwidgets,
     methods,
     S4Vectors,
-    shiny,
     shinyBS,
     shinyjs,
     utils,
@@ -42,7 +46,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-StagedInstal: no
 VignetteBuilder: knitr
 BugReports: https://github.com/crisprVerse/crisprShiny/issues
 URL: https://github.com/crisprVerse/crisprShiny
