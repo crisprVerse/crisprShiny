@@ -225,7 +225,7 @@ test_that(".getAlignmentsBrowserPlotParameters returns correct parameters", {
     ind <- 10
     target <- data[ind,]
     context <- target$genomicContext
-    geneModel <- txdb_human
+    geneModel <- txdb_kras
     params <- .getAlignmentsBrowserPlotParameters(
         context=context,
         target=target,

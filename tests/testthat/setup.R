@@ -1,12 +1,14 @@
 library(crisprDesign)
 data("SpCas9", package="crisprBase")
 data("AsCas12a", package="crisprBase")
-data("txdb_human", package="crisprDesignData")
+# data("txdb_human", package="crisprDesignData")
 
 data("guideSetExample_basic", package="crisprShiny")
 data("guideSetExample_kras", package="crisprShiny")
 data("guideSetExample_ntcs", package="crisprShiny")
 data("guideSetExample_kras_be", package="crisprShiny")
+data("txdb_kras", package="crisprShiny")
+data("tss_kras", package="crisprShiny")
 
 ## example GuideSets containing NTCs (and NA for most mcols)
 ntcs <- c("ntc_a"=paste0(rep("A", spacerLength(SpCas9)), collapse=""),

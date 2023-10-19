@@ -13,15 +13,15 @@ test_that("crisprShiny requires a GuideSet passed to guideSet", {
 test_that("crisprShiny requires a GRangesList object or NULL passed to geneModel", {
     bad_input <- list(NA,
                       "geneModel",
-                      txdb_human[[1]],
-                      txdb_human[1],
-                      txdb_human[-1])
+                      txdb_kras[[1]],
+                      txdb_kras[1],
+                      txdb_kras[-1])
     for (i in bad_input){
         expect_error(crisprShiny(guideSet=guideSetExample_basic,
                                  geneModel=i))
     }
     good_input <- list(NULL,
-                       txdb_human)
+                       txdb_kras)
     for (i in good_input){
         expect_error(crisprShiny(guideSet=guideSetExample_basic,
                                  geneModel=i),
@@ -54,7 +54,7 @@ test_that("crisprShiny returns a shiny.appobj object", {
                  guideSetExample_kras,
                  guideSetExample_kras_be,
                  guideSetExample_ntcs)
-    geneModels <- list(NULL, txdb_human)
+    geneModels <- list(NULL, txdb_kras)
     booleans <- list(TRUE, FALSE)
     for (i in sets){
         for (ii in geneModels){

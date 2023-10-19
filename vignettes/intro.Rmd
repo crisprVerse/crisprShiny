@@ -97,7 +97,7 @@ if (interactive()){
     mcols(gs)[["library"]] <- library
     
     ## create and run app
-    app <- crisprShiny(gs, geneModel=txdb_human)
+    app <- crisprShiny(gs, geneModel=txdb_kras)
     shiny::runApp(app)
 }
 ```
@@ -214,9 +214,9 @@ As stated in component, the user may select up to 20 gRNAs from same chromosome
 in the table of on-targets to plot using the `crisprViz` package. In this
 example, no value was passed to the `geneModel` argument, so no gene
 information is available for the plot. If we rerun the function with a
-`GRangesList` (see `crisprDesign` package), such as `txdb_human` from the
-`crisprDesignData` package, the gene transcripts are also plotted. There are
-additional options to set the viewing range and how the gRNA track is organized.
+`GRangesList` (see `crisprDesign` package), such as `txdb_kras`, the gene
+transcripts are also plotted. There are additional options to set the viewing
+range and how the gRNA track is organized.
 
 ![](figures/guide_browser.png)
 
@@ -325,7 +325,7 @@ if (interactive()){
                 crisprServer(
                     id,
                     guideSet=gs(),
-                    geneModel=txdb_human,
+                    geneModel=txdb_kras,
                     useFilterPresets=TRUE
                 )
             })

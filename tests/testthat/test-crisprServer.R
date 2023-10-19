@@ -3,7 +3,7 @@ test_that("crisprServer generates all reactives for fully-annotated GuideSet", {
                args=list(
                    id="test_module",
                    guideSet=guideSetExample_kras,
-                   geneModel=txdb_human,
+                   geneModel=txdb_kras,
                    useFilterPresets=FALSE
                ), {
                    expect_equal(nuclease, crisprDesign::crisprNuclease(guideSet))
@@ -42,7 +42,7 @@ test_that("crisprServer generates minimal reactives for minimal GuideSet", {
     #            args=list(
     #                id="test_module",
     #                guideSet=guideSetExample_basic,
-    #                geneModel=txdb_human,
+    #                geneModel=txdb_kras,
     #                useFilterPresets=FALSE
     #            ), {
     #                
@@ -111,7 +111,7 @@ test_that("crisprServer adds preset filters when useFilterPresets=TRUE", {
                args=list(
                    id="test_module",
                    guideSet=guideSetExample_kras,
-                   geneModel=txdb_human,
+                   geneModel=txdb_kras,
                    useFilterPresets=TRUE
                ), {
                    expect_equal(nuclease, crisprDesign::crisprNuclease(guideSet))

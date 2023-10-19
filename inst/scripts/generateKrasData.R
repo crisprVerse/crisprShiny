@@ -9,12 +9,28 @@ data("txdb_human", package="crisprDesignData")
 data("tss_human", package="crisprDesignData")
 data("gr.repeats.hg38", package="crisprDesignData")
 bsgenome <- BSgenome.Hsapiens.UCSC.hg38
+geneId <- "ENSG00000133703"
 canonicalIsoform <- "ENST00000311936"
 ## local files
 aligner_index <- "~/crisprIndices/bowtie/hg38/hg38"
 conservationFile <- "~/crisprIndices/conservation/hg38/hg38.phyloP30way.bw"
 vcf <- "~/crisprIndices/snps/dbsnp151.grch38/00-common_all_snps_only.vcf.gz"
 
+## subset txdb_human for KRAS gene
+txdb_kras <- lapply(txdb_human, function(x){
+    x[mcols(x)$gene_id == geneId,]
+})
+txdb_kras <- as(txdb_kras, "CompressedGRangesList")
+usethis::use_data(txdb_kras,
+                  compress="xz",
+                  overwrite=TRUE)
+tss_kras <- tss_human[tss_human$gene_id == geneId,]
+usethis::use_data(tss_kras,
+                  compress="xz",
+                  overwrite=TRUE)
+
+
+## obtain KRAS ranges
 kras_cds <- queryTxObject(txdb_human,
                           featureType="cds",
                           queryColumn="gene_symbol",

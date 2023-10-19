@@ -17,7 +17,7 @@ server <- function(gs, gene, geneModel, selectedRows){
             .renderGuideBrowserPlotAndCoords(
                 guideSet=gs,
                 gene="KRAS",
-                geneModel=txdb_human,
+                geneModel=txdb_kras,
                 selectedRows=1,
                 plotWindow="full",
                 guideStacking="full"
@@ -32,7 +32,7 @@ test_that(".renderGuideBrowserPlotAndCoords renders", {
     testServer(server(
         gs=guideSetExample_kras,
         gene="KRAS",
-        geneModel=txdb_human,
+        geneModel=txdb_kras,
         selectedRows=1
     ), {
         expect_error(output$out, regexp=NA)
@@ -40,7 +40,7 @@ test_that(".renderGuideBrowserPlotAndCoords renders", {
     testServer(server(
         gs=guideSetExample_kras,
         gene="",
-        geneModel=txdb_human,
+        geneModel=txdb_kras,
         selectedRows=1
     ), {
         expect_error(output$out, regexp=NA)
@@ -56,7 +56,7 @@ test_that(".renderGuideBrowserPlotAndCoords renders", {
     testServer(server(
         gs=guideSetExample_kras,
         gene="KRAS",
-        geneModel=txdb_human,
+        geneModel=txdb_kras,
         selectedRows=integer(0)
     ), {
         expect_error(output$out, regexp=NA)
@@ -71,7 +71,7 @@ test_that(".renderGuideBrowserPlotAndCoords renders", {
 #     testServer(server(
 #         gs=gs,
 #         gene="KRAS",
-#         geneModel=txdb_human,
+#         geneModel=txdb_kras,
 #         selectedRows=1
 #     ), {
 #         output$out

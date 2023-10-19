@@ -115,7 +115,7 @@ test_that(".renderAlignmentsBrowser renders", {
         nuclease=crisprDesign::crisprNuclease(guideSetExample_kras)
     )
     selectedRow <- 1
-    geneModel <- txdb_human
+    geneModel <- txdb_kras
     server <- function(input, output, session){
         out <- shiny::reactive(
             .renderAlignmentsBrowser(

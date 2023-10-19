@@ -1,7 +1,7 @@
 test_that(".getGuideBrowserParameters gives error when no rows selected", {
     expect_equal(.getGuideBrowserParameters(guideSetExample_kras,
                                             gene="KRAS",
-                                            geneModel=txdb_human,
+                                            geneModel=txdb_kras,
                                             selectedRows=numeric(0),
                                             plotWindow="full",
                                             guideStacking="full"),
@@ -13,7 +13,7 @@ test_that(".getGuideBrowserParameters gives error when no rows selected", {
 test_that(".getGuideBrowserParameters gives error when >20 rows selected", {
     expect_equal(.getGuideBrowserParameters(guideSetExample_kras,
                                             gene="KRAS",
-                                            geneModel=txdb_human,
+                                            geneModel=txdb_kras,
                                             selectedRows=1:25,
                                             plotWindow="full",
                                             guideStacking="full"),
@@ -25,7 +25,7 @@ test_that(".getGuideBrowserParameters gives error when >20 rows selected", {
 test_that(".getGuideBrowserParameters gives error when chr is not unique", {
     expect_equal(.getGuideBrowserParameters(ntc_kras,
                                             gene="KRAS",
-                                            geneModel=txdb_human,
+                                            geneModel=txdb_kras,
                                             selectedRows=c(1, length(ntc_kras)),
                                             plotWindow="full",
                                             guideStacking="full"),
@@ -37,7 +37,7 @@ test_that(".getGuideBrowserParameters gives error when chr is not unique", {
 test_that(".getGuideBrowserParameters returns NULL for gene as empty string", {
     out <- .getGuideBrowserParameters(guideSetExample_kras,
                                       gene="",
-                                      geneModel=txdb_human,
+                                      geneModel=txdb_kras,
                                       selectedRows=1,
                                       plotWindow="full",
                                       guideStacking="full")
@@ -49,7 +49,7 @@ test_that(".getGuideBrowserParameters returns gene symbol when provided", {
     gene <- "KRAS"
     out <- .getGuideBrowserParameters(guideSetExample_kras,
                                       gene=gene,
-                                      geneModel=txdb_human,
+                                      geneModel=txdb_kras,
                                       selectedRows=1,
                                       plotWindow="full",
                                       guideStacking="full")
@@ -60,11 +60,11 @@ test_that(".getGuideBrowserParameters returns gene symbol when provided", {
 test_that(".getGuideBrowserParameters returns geneModel in list", {
     out <- .getGuideBrowserParameters(guideSetExample_kras,
                                       gene="KRAS",
-                                      geneModel=txdb_human,
+                                      geneModel=txdb_kras,
                                       selectedRows=1,
                                       plotWindow="full",
                                       guideStacking="full")
-    expect_equal(out$geneModel, txdb_human)
+    expect_equal(out$geneModel, txdb_kras)
     out_null <- .getGuideBrowserParameters(guideSetExample_kras,
                                            gene="KRAS",
                                            geneModel=NULL,
@@ -79,7 +79,7 @@ test_that(".getGuideBrowserParameters coords depend on geneModel when plotWindow
     ## plotWindow="full"
     out <- .getGuideBrowserParameters(guideSetExample_kras,
                                       gene="KRAS",
-                                      geneModel=txdb_human,
+                                      geneModel=txdb_kras,
                                       selectedRows=1,
                                       plotWindow="full",
                                       guideStacking="full")
@@ -95,7 +95,7 @@ test_that(".getGuideBrowserParameters coords depend on geneModel when plotWindow
     ## plotWindow="zoom"
     out <- .getGuideBrowserParameters(guideSetExample_kras,
                                       gene="KRAS",
-                                      geneModel=txdb_human,
+                                      geneModel=txdb_kras,
                                       selectedRows=1,
                                       plotWindow="zoom",
                                       guideStacking="full")
@@ -116,7 +116,7 @@ test_that(".getGuideBrowserParameters converts guideStacking='full' to NA", {
     for (i in 1:3){
         results <- .getGuideBrowserParameters(guideSetExample_kras,
                                                 gene="KRAS",
-                                                geneModel=txdb_human,
+                                                geneModel=txdb_kras,
                                                 selectedRows=1,
                                                 plotWindow="full",
                                                 guideStacking=x[i])
