@@ -1,6 +1,6 @@
 ## generate full-annotated GuideSet object for human KRAS
 library(crisprDesign)
-library(crisprDesignData)
+library(crisprDesignData) # devtools::install_github("crisprVerse/crisprDesignData")
 library(BSgenome.Hsapiens.UCSC.hg38)
 library(usethis)
 data("SpCas9", package="crisprBase")

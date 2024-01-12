@@ -1,7 +1,6 @@
 library(crisprDesign)
 data("SpCas9", package="crisprBase")
 data("AsCas12a", package="crisprBase")
-# data("txdb_human", package="crisprDesignData")
 
 data("guideSetExample_basic", package="crisprShiny")
 data("guideSetExample_kras", package="crisprShiny")
