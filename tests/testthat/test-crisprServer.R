@@ -1,3 +1,5 @@
+data("tooltipAnnotation")
+
 test_that("crisprServer generates all reactives for fully-annotated GuideSet", {
     testServer(crisprServer,
                args=list(

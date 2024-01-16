@@ -1,3 +1,5 @@
+data("tooltipAnnotation")
+
 test_that(".addTooltip adds tooltip icon and text to label", {
     # skip test for now
     # expect_equal(...)

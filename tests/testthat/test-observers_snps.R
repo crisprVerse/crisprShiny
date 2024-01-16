@@ -1,3 +1,5 @@
+data("tooltipAnnotation")
+
 server <- function(gs){
     function(input, output, session){
         df <- GuideSet2DataFrames(gs)[["snps"]] ## remove indices
