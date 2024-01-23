@@ -1,6 +1,6 @@
 Package: crisprShiny
 Title: Exploring curated CRISPR gRNAs via Shiny
-Version: 0.99.9
+Version: 0.99.10
 Date: 2024-01-18
 Authors@R: c(
     person("Jean-Philippe", "Fortin", email = "fortin946@gmail.com", role = c("aut", "cre")),
