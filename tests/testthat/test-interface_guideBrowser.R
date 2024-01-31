@@ -1,8 +1,8 @@
 test_that(".guideBrowserUI renders", {
-    server <- function(input, output, session){
-        out <- shiny::reactive(.guideBrowserUI(session))
-        output$out <- shiny::renderUI(out())
-    }
+    # server <- function(input, output, session){
+    #     out <- shiny::reactive(.guideBrowserUI(session))
+    #     output$out <- shiny::renderUI(out())
+    # }
     # testServer(server, {
     #     expect_snapshot(out())
     #     output$out

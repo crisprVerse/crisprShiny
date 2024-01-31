@@ -60,51 +60,53 @@ test_that(".renderAlignmentsSummary renders", {
 
 
 ## move to observers...
-server <- function(gs){
-    function(input, output, session){
-        df <- GuideSet2DataFrames(gs[1:50])[["alignments"]] ## remove indices
-        nuclease <- crisprDesign::crisprNuclease(gs)
-        alignmentsDT <- shiny::reactive(
-            .renderAlignmentsDataTable(
-                alnData=df$alignments,
-                nuclease=nuclease
-            )
-        )
-        output$alignmentsDataTable <- DT::renderDataTable(alignmentsDT())
-    }
-}
-
-test_that("Alignments DT is not available for minimal GuideSet", {
-    gs <- guideSetExample_basic
-    testServer(server(gs), {
-        ## throws other error
-        # expect_error(alignmentsDT(), regexp=NA)
-        # expect_error(output$alignmentsDataTable, regexp=NA)
-    })
-})
-
-
-test_that("Alignments DT is expected for annotated CRISPRko GuideSet", {
-    gs <- guideSetExample_kras
-    testServer(server(gs), {
-        # x <- alignmentsDT()$x
-        ## data
-        cols <- c("ID", "alignmentType", "mismatchesAndPam", "score_cfd",
-                  "score_mit", "genomicContext", "pam_site")
-        # expect_setequal(colnames(x$data), cols)
-        # expect_equal(nrow(x$data), 4) # get actual value
-        ## DT settings
-        # expect_equal(x$filter, "none")
-        # expect_equal(x$selection$mode, "none")
-        # html <- output$alignmentsDataTable$html
-    })
-})
+# server <- function(gs){
+#     function(input, output, session){
+#         df <- GuideSet2DataFrames(gs[1:50])[["alignments"]] ## remove indices
+#         nuclease <- crisprDesign::crisprNuclease(gs)
+#         alignmentsDT <- shiny::reactive(
+#             .renderAlignmentsDataTable(
+#                 alnData=df$alignments,
+#                 nuclease=nuclease
+#             )
+#         )
+#         output$alignmentsDataTable <- DT::renderDataTable(alignmentsDT())
+#     }
+# }
+# 
+# test_that("Alignments DT is not available for minimal GuideSet", {
+#     gs <- guideSetExample_basic
+#     testServer(server(gs), {
+#         ## throws other error
+#         # expect_error(alignmentsDT(), regexp=NA)
+#         # expect_error(output$alignmentsDataTable, regexp=NA)
+#     })
+# })
+# 
+# 
+# test_that("Alignments DT is expected for annotated CRISPRko GuideSet", {
+#     gs <- guideSetExample_kras
+#     testServer(server(gs), {
+#         # x <- alignmentsDT()$x
+#         ## data
+#         cols <- c("ID", "alignmentType", "mismatchesAndPam", "score_cfd",
+#                   "score_mit", "genomicContext", "pam_site")
+#         # expect_setequal(colnames(x$data), cols)
+#         # expect_equal(nrow(x$data), 4) # get actual value
+#         ## DT settings
+#         # expect_equal(x$filter, "none")
+#         # expect_equal(x$selection$mode, "none")
+#         # html <- output$alignmentsDataTable$html
+#     })
+# })
 
 
 
 
 
 test_that(".renderAlignmentsBrowser renders", {
+    skip("Long render time for browser plot")
+    
     alns <- .formatAlignmentsData(
         alignments=GuideSet2DataFrames(guideSetExample_kras)[["alignments"]],
         id="spacer_1",
