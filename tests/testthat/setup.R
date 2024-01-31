@@ -8,10 +8,12 @@ data("guideSetExample_ntcs", package="crisprShiny")
 data("guideSetExample_kras_be", package="crisprShiny")
 data("txdb_kras", package="crisprShiny")
 data("tss_kras", package="crisprShiny")
+data("tooltipAnnotation")
 
 ## example GuideSets containing NTCs (and NA for most mcols)
 ntcs <- c("ntc_a"=paste0(rep("A", spacerLength(SpCas9)), collapse=""),
-          "ntc_t"=paste0(rep("t", spacerLength(SpCas9)), collapse=""))
+          "ntc_t"=paste0(rep("t", spacerLength(SpCas9)), collapse="")
+)
 
 ntc_simple <- crisprDesign::addNtcs(guideSetExample_basic,
                                     ntcs=ntcs)

@@ -226,7 +226,7 @@ test_that(".getAlignmentsBrowserPlotParameters returns correct parameters", {
     target <- data[ind,]
     context <- target$genomicContext
     geneModel <- txdb_kras
-    params <- .getAlignmentsBrowserPlotParameters(
+    params <- .getAlignmentsBrowserPlotParameters( # gives warning
         context=context,
         target=target,
         guideSet=gs,

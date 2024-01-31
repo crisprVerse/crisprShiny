@@ -1,11 +1,11 @@
-nuclease <- crisprBase::SpCas9
+## can this be moved to setup?
 df <- GuideSet2DataFrames(guideSetExample_basic)[["primary"]]
-results_min <- .formatOnTargets(df, nuclease=nuclease)
+results_min <- .formatOnTargets(df, nuclease=SpCas9)
 df_ko <- GuideSet2DataFrames(head(guideSetExample_kras))[["primary"]] # temp: head
-results_ko <- .formatOnTargets(df_ko, nuclease=nuclease)
+results_ko <- .formatOnTargets(df_ko, nuclease=SpCas9)
 df_noncanonical <- df_ko
 df_noncanonical$pam[1] <- "AAA"
-results_noncanonical <- .formatOnTargets(df_noncanonical, nuclease=nuclease)
+results_noncanonical <- .formatOnTargets(df_noncanonical, nuclease=SpCas9)
 
 
 test_that(".formatOnTargets returns data.frame with minimal columns", {
@@ -40,6 +40,6 @@ test_that(".formatOnTargets sorts rows by rank column, when present", {
 test_that(".formatOnTargets retains all extra columns", {
     extraCol <- "EXTRA_COLUMN"
     df_ko[[extraCol]] <- 0
-    results_extra <- .formatOnTargets(df_ko, nuclease=nuclease)
+    results_extra <- .formatOnTargets(df_ko, nuclease=SpCas9)
     expect_true(extraCol %in% colnames(results_extra))
 })
