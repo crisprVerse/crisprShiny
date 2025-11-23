@@ -152,7 +152,8 @@
 
 
 #' @importFrom crisprBase pamSide pams
-#' @importFrom Biostrings compareStrings matchPattern
+#' @importFrom Biostrings matchPattern
+#' @importFrom pwalign compareStrings
 #' @importFrom BiocGenerics start
 .formatAlignmentMismatches <- function(alignments,
                                        nuclease
@@ -165,7 +166,7 @@
                               pamSide,
                               nuclease
     ){
-        stringComp <- Biostrings::compareStrings(spacer, protospacer)
+        stringComp <- pwalign::compareStrings(spacer, protospacer)
         mms <- Biostrings::matchPattern("?", stringComp)
         mms <- BiocGenerics::start(mms)
         

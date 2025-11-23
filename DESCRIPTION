@@ -27,6 +27,7 @@ Imports:
     GenomeInfoDb,
     htmlwidgets,
     methods,
+    pwalign,
     S4Vectors,
     shinyBS,
     shinyjs,
@@ -47,7 +48,7 @@ biocViews:
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.0
+RoxygenNote: 7.3.3
 VignetteBuilder: knitr
 BugReports: https://github.com/crisprVerse/crisprShiny/issues
 URL: https://github.com/crisprVerse/crisprShiny
