@@ -439,7 +439,7 @@
 
 
 #' @importFrom crisprDesign geneAnnotation bsgenome
-#' @importFrom GenomeInfoDb commonName
+#' @importFrom Seqinfo commonName
 #' @importFrom utils data
 .guideSetFilters_isoforms <- function(session,
                                       guideSet,
@@ -465,7 +465,7 @@
     names(isoform_choices) <- isoform_df$gene_symbol
     ## add identifiers for canonical isoforms
     bsgenome <- crisprDesign::bsgenome(guideSet)
-    species <- tolower(GenomeInfoDb::commonName(bsgenome))
+    species <- tolower(Seqinfo::commonName(bsgenome))
     ## user should provide this optional information
     # if (species %in% c("human", "mouse")){
     #     canonicalTxs <- switch(

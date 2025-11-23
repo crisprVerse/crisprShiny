@@ -152,8 +152,8 @@
 
 
 #' @importFrom crisprBase pamSide pams
-#' @importFrom Biostrings matchPattern
 #' @importFrom pwalign compareStrings
+#' @importFrom Biostrings matchPattern
 #' @importFrom BiocGenerics start
 .formatAlignmentMismatches <- function(alignments,
                                        nuclease
@@ -286,7 +286,7 @@
 #' @importFrom BSgenome commonName
 #' @importClassesFrom crisprDesign GuideSet
 #' @importFrom crisprBase spacerLength pamLength getProtospacerRanges
-#' @importFrom GenomeInfoDb genome genome<-
+#' @importFrom Seqinfo genome genome<-
 #' @importFrom BiocGenerics start end
 .getAlignmentsBrowserPlotParameters <- function(context,
                                                 target,
@@ -320,7 +320,7 @@
         bsgenome=bsgenome,
         ids='spacer'
     )
-    GenomeInfoDb::genome(gs) <- unique(GenomeInfoDb::genome(bsgenome))
+    Seqinfo::genome(gs) <- unique(Seqinfo::genome(bsgenome))
     names(gs) <- "spacer"
     
     from <- NULL
