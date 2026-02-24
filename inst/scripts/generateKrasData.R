@@ -73,7 +73,7 @@ addCrisprKoAnnotations <- function(gs){
     gs <- addConservationScores(gs,
                                 conservationFile=conservationFile)
     gs <- addCompositeScores(gs,
-                             methods=c("azimuth", "deephf", "deepspcas9",
+                             methods=c("deephf",
                                        "lindel", "ruleset1", "ruleset3",
                                        "crisprater", "crisprscan"))
     gs <- addGeneAnnotation(gs,

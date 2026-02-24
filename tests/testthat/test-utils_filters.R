@@ -148,19 +148,6 @@ test_that(".applyGuideSetFilters apply alignment filters", {
 })
 
 
-test_that(".applyGuideSetFilters apply score filters", {
-    testServer(server(guideSetExample_kras[1:50]), {
-        start <- gs_filtered()
-        session$setInputs(filter_score_azimuth=0.5)
-        expect_true(all(gs_filtered()$score_azimuth >= 0.5))
-        session$setInputs(filter_score_azimuth=1)
-        expect_true(length(gs_filtered()) == 0)
-        session$setInputs(filter_score_azimuth=0)
-        expect_equal(gs_filtered(), start)
-    })
-    ## score_conservation_binary?
-    ## ignore ruleset3
-})
 
 
 test_that(".applyGuideSetFilters apply genomic features filters", {

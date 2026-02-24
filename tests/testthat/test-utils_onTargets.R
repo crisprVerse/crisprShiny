@@ -28,10 +28,7 @@ test_that(".formatOnTargets sets off-target scores for noncanonical PAMs to NA",
     expect_false(any(is.na(results_noncanonical$score_mit[-1])))
 })
 
-test_that(".formatOnTargets rounds scores to 3 decimal places", {
-    scores <- as.numeric(results_ko$score_azimuth)
-    expect_identical(scores, round(scores, 3))
-})
+
 
 test_that(".formatOnTargets sorts rows by rank column, when present", {
     expect_true(isSorted(results_ko$rank))
